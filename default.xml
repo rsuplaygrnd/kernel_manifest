@@ -30,6 +30,7 @@
   </project>
   <project remote="rsu" name="android_vendor_mediatek_kernel_modules" path="vendor/mediatek/kernel_modules" revision="master"/>
 
+  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="ddk" />
   <project path="kernel/tests" name="kernel/tests" revision="main" />
   <project path="kernel/configs" name="kernel/configs"/>
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="ddk" />
