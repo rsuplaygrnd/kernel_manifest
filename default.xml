@@ -9,8 +9,6 @@
   <!-- Track MediaTek Generic Kernel bazel rules -->
   <project path="build/kernel" name="kernel/build" remote="aosp">
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
-    <linkfile src="kleaf/bzlmod/bazel.MODULE.bazel" dest="MODULE.bazel" />
-    <linkfile src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" dest="WORKSPACE.bzlmod" />
     <linkfile src="build_test.sh" dest="build/build_test.sh" />
     <linkfile src="config.sh" dest="build/config.sh" />
   </project>
