@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch="https://android-review.googlesource.com/" />
+  <remote name="android14" fetch="https://android-review.googlesource.com/" revision="refs/tags/android-14.0.0_r33" />
   <remote name="rsu" fetch="https://github.com/rsuplaygrnd" />
   <default revision="main-kernel-build-2024" remote="aosp" sync-j="4" />
 
@@ -31,7 +32,7 @@
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="ddk" remote="aosp" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" revision="main" />
   <project path="kernel/configs" name="kernel/configs" remote="aosp" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="ddk" remote="aosp" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="ddk" remote="android14" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="ddk" remote="aosp" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="ddk" remote="aosp" />
   <project path="prebuilts/clang-tools" name="platform/prebuilts/clang-tools" clone-depth="1" remote="aosp" />
