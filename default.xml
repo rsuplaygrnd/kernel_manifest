@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com/" />
-  <remote name="rsu" fetch="https://github.com/rsuplaygrnd" />
-  <remote name="bazel" fetch="https://github.com/bazelbuild" />
+  <remote name="github" fetch="https://github.com/" />
   <default revision="main-kernel-build-2024" remote="aosp" sync-j="4" />
 
   <superproject name="kernel/superproject" remote="aosp" revision="common-android15-6.6-lts" />
@@ -16,18 +15,18 @@
   </project>
 
   <!-- Track MediaTek Generic Kernel bazel rules -->
-  <project path="build/bazel_mgk_rules" name="kernel-build-bazel_mgk_rules" remote="rsu" revision="master">
+  <project path="build/bazel_mgk_rules" name="rsuplaygrnd/kernel-build-bazel_mgk_rules" remote="github" revision="master">
     <linkfile src="BUILD.bazel" dest="BUILD" />
     <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
   </project>
 
   <!-- Track MediaTek Generic Kernel projects -->
-  <project path="kernel_device_modules-6.6" name="android_kernel_device_modules_6.6" remote="rsu" revision="master">
+  <project path="kernel_device_modules-6.6" name="rsuplaygrnd/android_kernel_device_modules_6.6" remote="github" revision="master">
     <linkfile src="build.config.mtk_kernel_device_modules" dest="build.config" />
   </project>
   
   <!-- Track MediaTek Kernel modules -->
-  <project path="vendor/mediatek/kernel_modules" name="android_vendor_mediatek_kernel_modules" remote="rsu" revision="master"/>
+  <project path="vendor/mediatek/kernel_modules" name="rsuplaygrnd/android_vendor_mediatek_kernel_modules" remote="github" revision="master"/>
 
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="ddk" remote="aosp" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" revision="main" />
@@ -51,9 +50,16 @@
   <project path="external/bazel-skylib" name="platform/external/bazel-skylib" groups="ddk-external" remote="aosp" />
   <project path="external/bazelbuild-rules_cc" name="platform/external/bazelbuild-rules_cc" groups="ddk-external" remote="aosp" />
   <project path="external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" groups="ddk-external" remote="aosp" />
-  <project path="external/bazelbuild-rules_rust" name="rules_rust" revision="main" remote="bazel" />
+  <project path="external/bazelbuild-rules_rust" name="bazelbuild/rules_rust" revision="main" remote="github" />
   <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" groups="ddk-external" remote="aosp" />
   <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" groups="ddk-external" remote="aosp" />
   <project path="external/python/absl-py" name="platform/external/python/absl-py" groups="ddk-external" remote="aosp" />
   <project path="external/stardoc" name="platform/external/stardoc" />
+
+  <!-- dependencies used to build toolchain from sources -->
+  <project path="external/lz4" name="platform/external/lz4" groups="ddk" remote="aosp" />
+  <project path="external/pigz" name="platform/external/pigz" groups="ddk" remote="aosp" />
+  <project path="external/toybox" name="platform/external/toybox" groups="ddk" remote="aosp" />
+  <project path="external/zlib" name="platform/external/zlib" groups="ddk" remote="aosp" />
+  <project path="external/zopfli" name="platform/external/zopfli" groups="ddk" remote="aosp" />
 </manifest>
